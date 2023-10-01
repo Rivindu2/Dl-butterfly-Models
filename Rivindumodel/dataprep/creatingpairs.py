@@ -4,6 +4,11 @@ import pandas as pd
 import random
 import shutil
 
+# this file will create positiv and negative pairs 
+# meaning it will create pairs of images that belong in the same class (positive pairs)
+# and create pais of images that dont belong in the same class (negative pai r)
+
+
 #load image labels
 labels = pd.read_csv("/Users/rivindu/Desktop/datasetfor-butterfly/Training_set.csv")
 #get image list in traiing dir
@@ -62,6 +67,7 @@ with open(pair_info_file, 'w', newline='') as csvfile:
         shutil.copy(os.path.join(image_dir, image2), image2_dst)
         
         pair_info_writer.writerow([image1_dst, image2_dst, label])
+
 
 
 print("created pairs")
