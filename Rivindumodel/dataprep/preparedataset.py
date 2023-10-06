@@ -18,14 +18,15 @@ df = pd.read_csv(csv_path)
 
 unique_labels = df['label'].unique()#identify all unuqie 75 classes
 for label in unique_labels:
-    label_folder = os.path.join(output_path, label)
-    os.makedirs(label_folder, exist_ok=True)
-    image_filenames = df[df['label'] == label]['filename'].tolist()
+    print("labe",label)
+    # label_folder = os.path.join(output_path, label)
+    # os.makedirs(label_folder, exist_ok=True)
+    # image_filenames = df[df['label'] == label]['filename'].tolist()
     
 
-    for filename in image_filenames:
-        src_path = os.path.join(dataset_path, filename)
-        dst_path = os.path.join(label_folder, filename)
-        shutil.copy(src_path, dst_path)
+    # for filename in image_filenames:
+    #     src_path = os.path.join(dataset_path, filename)
+    #     dst_path = os.path.join(label_folder, filename)
+    #     shutil.copy(src_path, dst_path)
         
 print("Done check dir")
